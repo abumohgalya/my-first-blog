@@ -125,17 +125,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+
+#This is the base URL location from which static files will be served, for example on a CDN.
+# This is used for the static template variable that is accessed in our base template
+# The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
+
+#STATICFILES_DIRS: This lists additional directories that Django's collectstatic tool should search for static files.
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 #or
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-#     '/var/www/static/',
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
 
 
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
-
+# STATIC_ROOT: This is the absolute path to a directory where Django's "collectstatic" tool
+#will gather any static files referenced in our templates
+#Once collected, these can then be uploaded as a group to wherever the files are to be hosted.
+# The absolute path to the directory where collectstatic will collect static files for deployment.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
