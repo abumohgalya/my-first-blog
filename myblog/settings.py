@@ -58,7 +58,7 @@ ROOT_URLCONF = 'myblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'blog/templates/blog'],
+        'DIRS': [],                  #[r'blog/templates/blog']
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,16 +136,18 @@ STATIC_URL = '/static/'
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 #or
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     '/var/www/static/',
+# ]
 
 
 # STATIC_ROOT: This is the absolute path to a directory where Django's "collectstatic" tool
 #will gather any static files referenced in our templates
 #Once collected, these can then be uploaded as a group to wherever the files are to be hosted.
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
